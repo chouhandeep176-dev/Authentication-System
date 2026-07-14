@@ -13,8 +13,9 @@ const LogoutSideBtn = ({ children }) => {
   const navigate = useNavigate();
 
   async function handleClick() {
+
     try {
-      const res = await fetch("http://localhost:3000/auth/logout", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/auth/logout`, {
         method: "post",
         credentials: "include",
       });

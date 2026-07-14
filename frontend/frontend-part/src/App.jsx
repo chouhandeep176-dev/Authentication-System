@@ -83,7 +83,7 @@ function App() {
     const checkAuth = async () => {
       try {
         const res = await apiFetch(
-          "http://localhost:3000/user/profile",
+          `${import.meta.env.VITE_API_URL}/user/profile`,
           dispatch,
         );
 
@@ -104,12 +104,14 @@ function App() {
         //? logout user after token cookie expires -->
         const interval = setInterval(
           () => {
-            apiFetch("http://localhost:3000/user/profile", dispatch);
+            apiFetch(`${import.meta.env.VITE_API_URL}/user/profile`, dispatch);
           },
           15 * 60 * 1000,
         );
 
-        return () => clearInterval(interval);
+         return () => {
+           if (interval) clearInterval(interval);
+         };
       } catch (err) {
         console.log("error : ", err);
         toast.error("unknown error occured !");
