@@ -35,9 +35,7 @@ Example:
 
 ```env
 db_URI=your-db-connection-string
-<br>
 PORT=your-port
-<br>
 secretKey=your-secret-key
 ```
 
