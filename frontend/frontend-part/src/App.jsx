@@ -7,7 +7,7 @@ import {
   authFailure,
   setUserData,
 } from "./features/user slice/userSlice.js";
-import Layout from "./components/Layout/layout.jsx";
+import Layout from "./components/Layout/Layout.jsx";
 import Profile from "./components/Layout/Profile.jsx";
 import Home from "./components/Layout/Home.jsx";
 
