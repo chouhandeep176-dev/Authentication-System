@@ -24,9 +24,8 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("api working");
+  res.send("<h1>api working</h1>");
 });
-
 
 
 // apply auth and user router -->
