@@ -73,15 +73,15 @@ export const login = async (req, res) => {
       .status(200)
       .cookie("token", token, {
         httpOnly: true,
-        secure: true, // true in production
-        sameSite: "lax",
+        secure: true,
+        sameSite: "none",
       })
       .json({
         success: true,
         user: {
           name: user.name,
           email: user.email,
-          date: user.createdAt
+          date: user.createdAt,
         },
       });
   } catch (err) {
@@ -98,8 +98,8 @@ export const logout = async(req, res)=>{
   res
     .clearCookie("token", {
       httpOnly: true,
-      secure: true, // true in production
-      sameSite: "lax",
+      secure: true,
+      sameSite: "none",
     })
     .json({
       success: true,
