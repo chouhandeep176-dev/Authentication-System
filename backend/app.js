@@ -18,9 +18,16 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
+app.use((req, res, next) => {
+  console.log("Incoming:", req.method, req.url);
+  next();
+});
+
 app.get("/", (req, res) => {
   res.send("api working");
 });
+
+
 
 // apply auth and user router -->
 app.use("/auth", authRouter);
