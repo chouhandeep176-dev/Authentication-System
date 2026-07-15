@@ -9,7 +9,7 @@ export const app = express();
 // apply cors -->
 app.use(
   cors({
-    origin: [process.env.CLIENT_URL,  "http://localhost:5173"],
+    origin: process.env.CLIENT_URL,
     credentials: true,
   }),
 );
@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.get("/", (req, res) => {
-  res.send("data sent");
+  res.send("api working");
 });
 
 // apply auth and user router -->
