@@ -9,6 +9,7 @@ const ProtectedRoute = ({ children }) => {
   console.log("user data ", user);
 
   if (!user) {
+    console.log("redirected to home page !")
     return <Navigate to="/" replace />;
   }
 
